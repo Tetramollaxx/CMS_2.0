@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GodotEntity" load_steps=7 format=3 uid="uid://c8koiwwny5ps4"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_l8lc3"]
+[ext_resource type="Script" uid="uid://cnodkdnkbheri" path="res://Game/CMS/Demo/GodotEntity.gd" id="1_yd6pt"]
+[ext_resource type="Script" uid="uid://dc6v56id686h4" path="res://Game/CMS/Demo/tags/TagScale.gd" id="2_wq1je"]
+[ext_resource type="Script" uid="uid://djxpfr8oobxlu" path="res://Game/CMS/Demo/tags/TagChangeVisibilityOnSpacePressed.gd" id="3_vcckl"]
+
+[sub_resource type="Resource" id="Resource_wq1je"]
+script = ExtResource("2_wq1je")
+
+[sub_resource type="Resource" id="Resource_q0okq"]
+script = ExtResource("3_vcckl")
+metadata/_custom_type_script = "uid://djxpfr8oobxlu"
+
+[resource]
+script = ExtResource("1_yd6pt")
+Tags = Array[ExtResource("1_l8lc3")]([SubResource("Resource_wq1je"), SubResource("Resource_q0okq")])
+metadata/_custom_type_script = "uid://cnodkdnkbheri"

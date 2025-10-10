@@ -1,29 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm2y1mjvs6nxs"]
+[gd_scene load_steps=3 format=3 uid="uid://cm2y1mjvs6nxs"]
 
-[ext_resource type="Script" uid="uid://fju2tos1yefh" path="res://Game/CMS/EntityHolderNode.gd" id="1_tfqp0"]
-[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="2_p428j"]
-[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="3_mnjrk"]
-[ext_resource type="Script" uid="uid://dc6v56id686h4" path="res://Game/CMS/Demo/tags/TagScale.gd" id="3_p428j"]
-[ext_resource type="Texture2D" uid="uid://civb1tfco2yq0" path="res://icon.svg" id="4_5jfgm"]
-
-[sub_resource type="Resource" id="Resource_mnjrk"]
-script = ExtResource("3_p428j")
-scale = Vector2(3, 3)
-metadata/_custom_type_script = "uid://dc6v56id686h4"
-
-[sub_resource type="Resource" id="Resource_5jfgm"]
-script = ExtResource("3_mnjrk")
-Tags = Array[ExtResource("2_p428j")]([SubResource("Resource_mnjrk")])
-metadata/_custom_type_script = "uid://cth3owim6xfkb"
+[ext_resource type="Script" uid="uid://b7set7lkeit2s" path="res://Game/CMS/Demo/scenes/demo_main.gd" id="1_0pbva"]
+[ext_resource type="PackedScene" uid="uid://bhkgwanmtrkth" path="res://Game/CMS/Demo/scenes/entity_holder_node.tscn" id="1_eu7i3"]
 
 [node name="DemoMain" type="Node2D"]
+script = ExtResource("1_0pbva")
 
-[node name="EntityHolderNode" type="Node2D" parent="."]
+[node name="EntityHolderNode" parent="." instance=ExtResource("1_eu7i3")]
 position = Vector2(973, 556)
-script = ExtResource("1_tfqp0")
-data = SubResource("Resource_5jfgm")
-metadata/_custom_type_script = "uid://fju2tos1yefh"
-
-[node name="Sprite2D" type="Sprite2D" parent="EntityHolderNode"]
-scale = Vector2(2, 2)
-texture = ExtResource("4_5jfgm")

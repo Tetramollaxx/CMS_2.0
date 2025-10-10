@@ -41,6 +41,7 @@ func _on_node_deleted(n: Node):
 			var ref = _interactions[i]
 			if ref == null or !is_instance_valid(ref.get_ref()) or ref.get_ref() == null:
 				_interactions.remove_at(i)
+		_visited.clear()
 
 func _initialize_interactions():
 	var root = get_tree().root

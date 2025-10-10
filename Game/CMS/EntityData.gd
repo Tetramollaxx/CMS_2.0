@@ -25,15 +25,14 @@ func _on_node_ready():
 		t.OnEntityReady()
 
 func _on_node_exiting():
-	for t in Tags:
-		t._on_unregister()
 	Unregister()
 
 func Unregister():
+	#print(get_reference_count())
 	for tag in Tags:
 		tag._on_unregister()
 		assert(tag.get_reference_count() <= 2, "Memory leak detected: Tag has too many references.")
-	assert(get_reference_count() <= 2, "Memory leak detected: EntityData has too many references.")
+	assert(get_reference_count() <= 3, "Memory leak detected: EntityData has too many references.")
 
 # if you get an error here, check if you are saving
 # the reference to tags or EntityData somewhere

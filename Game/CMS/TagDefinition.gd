@@ -22,7 +22,7 @@ func OnInitData(data: EntityData): pass
 func OnEntityReady(): pass
 func OnUnregister(): pass
 
-## Called by EntityData.Unregister() — resets Tag memory to avoid leaks
+## Called by EntityData.Unregister() - resets Tag memory to avoid leaks
 func _on_unregister():
 	OnUnregister()
 	for p in self.get_property_list():
