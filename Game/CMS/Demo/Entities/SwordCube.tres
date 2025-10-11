@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CustomEntity" load_steps=9 format=3 uid="uid://d0mhwk3ip6dsh"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_xincp"]
+[ext_resource type="Script" uid="uid://dc6v56id686h4" path="res://Game/CMS/Demo/tags/TagScale.gd" id="2_ek4x1"]
+[ext_resource type="Script" uid="uid://dcvgihpscyvd4" path="res://Game/CMS/Demo/tags/TagObjectVisualForm.gd" id="3_a50b7"]
+[ext_resource type="Script" uid="uid://cnodkdnkbheri" path="res://Game/CMS/Demo/GodotEntity.gd" id="4_43171"]
+[ext_resource type="Script" uid="uid://bjdipwge2jtrh" path="res://Game/CMS/Demo/tags/TagShowVisualElements.gd" id="4_ek4x1"]
+
+[sub_resource type="Resource" id="Resource_s1pt0"]
+script = ExtResource("2_ek4x1")
+
+[sub_resource type="Resource" id="Resource_04f80"]
+script = ExtResource("3_a50b7")
+
+[sub_resource type="Resource" id="Resource_a50b7"]
+script = ExtResource("4_ek4x1")
+Elements = Array[NodePath]([NodePath("Visual/Sword")])
+metadata/_custom_type_script = "uid://bjdipwge2jtrh"
+
+[resource]
+script = ExtResource("4_43171")
+Tags = Array[ExtResource("1_xincp")]([SubResource("Resource_s1pt0"), SubResource("Resource_04f80"), SubResource("Resource_a50b7")])
+metadata/_custom_type_script = "uid://cnodkdnkbheri"

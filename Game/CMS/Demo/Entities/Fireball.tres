@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CustomEntity" load_steps=9 format=3 uid="uid://dh60j37324wa2"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_q1u2x"]
+[ext_resource type="Script" uid="uid://dc6v56id686h4" path="res://Game/CMS/Demo/tags/TagScale.gd" id="2_x8ohm"]
+[ext_resource type="Script" uid="uid://dcvgihpscyvd4" path="res://Game/CMS/Demo/tags/TagObjectVisualForm.gd" id="3_pdmsf"]
+[ext_resource type="Script" uid="uid://cnodkdnkbheri" path="res://Game/CMS/Demo/GodotEntity.gd" id="4_06ul3"]
+[ext_resource type="Script" uid="uid://bjdipwge2jtrh" path="res://Game/CMS/Demo/tags/TagShowVisualElements.gd" id="4_x8ohm"]
+
+[sub_resource type="Resource" id="Resource_2y58v"]
+script = ExtResource("2_x8ohm")
+scale = Vector2(2, 2)
+
+[sub_resource type="Resource" id="Resource_gqkw8"]
+script = ExtResource("3_pdmsf")
+form = 1
+
+[sub_resource type="Resource" id="Resource_pdmsf"]
+script = ExtResource("4_x8ohm")
+Elements = Array[NodePath]([NodePath("Visual/Fire")])
+metadata/_custom_type_script = "uid://bjdipwge2jtrh"
+
+[resource]
+script = ExtResource("4_06ul3")
+Tags = Array[ExtResource("1_q1u2x")]([SubResource("Resource_2y58v"), SubResource("Resource_gqkw8"), SubResource("Resource_pdmsf")])
+metadata/_custom_type_script = "uid://cnodkdnkbheri"

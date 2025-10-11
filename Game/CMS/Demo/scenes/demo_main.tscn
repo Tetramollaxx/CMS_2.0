@@ -1,10 +1,125 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm2y1mjvs6nxs"]
+[gd_scene load_steps=8 format=3 uid="uid://cm2y1mjvs6nxs"]
 
 [ext_resource type="Script" uid="uid://b7set7lkeit2s" path="res://Game/CMS/Demo/scenes/demo_main.gd" id="1_0pbva"]
 [ext_resource type="PackedScene" uid="uid://bhkgwanmtrkth" path="res://Game/CMS/Demo/scenes/entity_holder_node.tscn" id="1_eu7i3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pbva"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.30980393, 0.33333334, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q0fg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3180196, 0.31801987, 0.31801963, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.30980393, 0.33333334, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfqp0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.30980393, 0.33333334, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p428j"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.30980393, 0.33333334, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnjrk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.30980393, 0.33333334, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+corner_detail = 5
+
 [node name="DemoMain" type="Node2D"]
 script = ExtResource("1_0pbva")
 
+[node name="BG" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+offset_left = -3253.0
+offset_top = -3724.0
+offset_right = 5211.0
+offset_bottom = 4740.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
 [node name="EntityHolderNode" parent="." instance=ExtResource("1_eu7i3")]
-position = Vector2(973, 556)
+position = Vector2(960, 526.32)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 216.0
+offset_top = 356.0
+offset_right = 519.0
+offset_bottom = 442.0
+
+[node name="RandomizeButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(330.428, 105.895)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 27
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_0pbva")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6q0fg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tfqp0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_p428j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mnjrk")
+text = "randomize"
+
+[connection signal="pressed" from="VBoxContainer/RandomizeButton" to="." method="_on_randomize_button_pressed"]

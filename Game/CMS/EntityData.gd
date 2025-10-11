@@ -27,8 +27,13 @@ func _on_node_ready():
 func _on_node_exiting():
 	Unregister()
 
+func GetTag(type : Variant):
+	for t in Tags:
+		if is_instance_of(t, type):
+			return t
+	return null
+
 func Unregister():
-	#print(get_reference_count())
 	for tag in Tags:
 		tag._on_unregister()
 		assert(tag.get_reference_count() <= 2, "Memory leak detected: Tag has too many references.")
