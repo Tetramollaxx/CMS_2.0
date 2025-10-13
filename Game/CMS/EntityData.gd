@@ -1,14 +1,12 @@
 extends Resource
 ## Serializable resource that defines the configuration and behavior of an Entity.
 ## Contains an array of tags (Tag resources), which each encapsulate logic or modifiers.
-##
-## This data is duplicated at runtime to ensure each Entity instance is isolated.
 class_name EntityData
 
 ## All tags that define this entity's behavior
 @export var Tags: Array[Tag]
 
-## Runtime reference to the owning Entity node
+## Runtime reference to the node
 var node : Node
 
 func Initialize(node_to_bind : Node):
@@ -20,6 +18,8 @@ func Initialize(node_to_bind : Node):
 		t.entity_node = node_to_bind
 		t._on_init_data(self)
 
+#######
+
 func _on_node_ready():
 	for t in Tags:
 		t.OnEntityReady()
@@ -27,12 +27,17 @@ func _on_node_ready():
 func _on_node_exiting():
 	Unregister()
 
+#######
+
+## Get tag by type/class
 func GetTag(type : Variant):
 	for t in Tags:
 		if is_instance_of(t, type):
 			return t
 	return null
 
+
+## Check references to the tags and to self, to avoid memory leaks
 func Unregister():
 	for tag in Tags:
 		tag._on_unregister()

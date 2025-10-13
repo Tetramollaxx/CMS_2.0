@@ -17,7 +17,7 @@ func _on_init_data(data: EntityData):
 	OnInitData(data)
 
 ## Lifecycle hooks
-@warning_ignore("unused_parameter")
+@warning_ignore("unused_parameter") # virtual
 func OnInitData(data: EntityData): pass
 func OnEntityReady(): pass
 func OnUnregister(): pass

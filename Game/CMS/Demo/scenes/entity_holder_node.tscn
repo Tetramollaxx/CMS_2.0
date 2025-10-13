@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhkgwanmtrkth"]
 
-[ext_resource type="Script" uid="uid://fju2tos1yefh" path="res://Game/CMS/EntityHolderNode.gd" id="1_s0uo7"]
+[ext_resource type="Script" uid="uid://fju2tos1yefh" path="res://Game/CMS/Demo/EntityHolderNode.gd" id="1_s0uo7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erbvc"]
 content_margin_left = 0.0

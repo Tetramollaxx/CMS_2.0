@@ -2,8 +2,6 @@ extends Node2D
 
 
 @onready var node : EntityHolderNode = $EntityHolderNode
-#
-#
 
 
 
