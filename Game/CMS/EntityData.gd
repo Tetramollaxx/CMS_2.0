@@ -13,6 +13,8 @@ func Initialize(node_to_bind : Node):
 	node_to_bind.connect("tree_exiting", Callable(self, "_on_node_exiting"))
 	node_to_bind.connect("ready", Callable(self, "_on_node_ready"))
 
+	node = node_to_bind
+
 	# Init tags
 	for t in Tags:
 		t.entity_node = node_to_bind
